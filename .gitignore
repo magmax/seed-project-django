@@ -1,9 +1,7 @@
-Angular/node_modules
-Angular/app/bower_components
 *~
 \#*
 .\#*
 *.pyc
-Django/venv/
-Django/db.sqlite3
-Django/.coverage
+venv
+db.sqlite3
+.coverage
