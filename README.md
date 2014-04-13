@@ -1,4 +1,4 @@
-[![Travis status][Travis status]][Travis project]
+[![Travis status][Travis status]][Travis project]  **STILL IN DEVELOPMENT**
 
 # Seed Project Django
 Django server for [Seed Project], based on "[AngularJS Django Rest Framework Seed]" (by [zackargyle])
