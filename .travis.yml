@@ -1,0 +1,10 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+  - "3.2"
+  - "3.3"
+
+install: "pip intall -r requirements.txt -r requirements-dev.txt"
+
+script: "fab acceptance"
