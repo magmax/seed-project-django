@@ -96,7 +96,7 @@ def run_tests(runner, coverage=True):
         else 'python'
     )
 
-    cmd += ' manage.py test --testrunner {runner}'
+    cmd += ' manage.py test --testrunner {runner} -p"*.py"'
 
     local(cmd.format(omit=omit_files, runner=runner))
 
