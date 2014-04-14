@@ -18,6 +18,7 @@ omit_files = ','.join([
 def create_environment(name='venv'):
         local('virtualenv %s' % name)
 
+
 @task
 def launch(version="", port=8001):
     local("python%s manage.py runserver %s" % (version, port))
@@ -41,15 +42,16 @@ def clean():
 @task
 def pep8():
     """Executes pep8 report"""
-    files = ' '.join([x for x in os.listdir('.')
-                      if os.path.isdir(x) or x.endswith('.py')])
+    files = ' '.join(project_files())
     local('pep8 --statistics %s' % files)
 
 
 @task
 def flakes():
     """Searchs static errors in code"""
-    local('pyflakes .')
+    files = ' '.join(project_files())
+    local('pyflakes %s' % files)
+
 
 @task
 def unit():
@@ -103,3 +105,13 @@ def run_tests(runner, coverage=True):
 
 def show_report():
     local('coverage report')
+
+
+def project_files():
+        return (x for x in os.listdir('.')
+                if (not x.startswith('.')
+                    and (x.endswith('.py')
+                         or (os.path.isdir(x) and not x.endswith('env'))
+                         )
+                    )
+                )
