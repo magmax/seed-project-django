@@ -1,4 +1,4 @@
-from app.models import *
+from app import models
 from rest_framework import serializers
 from django.contrib.auth.models import User
 
@@ -13,4 +13,4 @@ class UserSerializer(serializers.ModelSerializer):
 class AddressSerializer(serializers.ModelSerializer):
     """Serializes an Address object"""
     class Meta:
-        model = Address
+        model = models.Address

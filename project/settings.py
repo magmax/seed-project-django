@@ -112,8 +112,6 @@ LOGGING = {
     }
 }
 
-try:
-    from local_settings import *
-    INSTALLED_APPS += DEBUG_APPS
-except ImportError:
-    pass
+if os.path.exists('local_settings.py'):
+    with open('local_settings.py') as fd:
+        exec(fd.read(), globals())

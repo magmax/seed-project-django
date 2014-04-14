@@ -1,5 +1,4 @@
 from django.test.runner import DiscoverRunner
-from django.utils import unittest
 from unittest.suite import TestSuite
 
 
