@@ -112,6 +112,8 @@ LOGGING = {
     }
 }
 
+SECRET_KEY = 'change me'
+
 if os.path.exists('local_settings.py'):
     with open('local_settings.py') as fd:
         exec(fd.read(), globals())
